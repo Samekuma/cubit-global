@@ -1,0 +1,57 @@
+<!-- <section
+  id="hero-section"
+  class="h-screen bg-black text-white flex flex-col items-center justify-center text-center"
+>
+  <div
+    class="typing-container flex items-center justify-center flex-col whitespace-pre-wrap break-words w-full overflow-hidden max-w-screen-md m-auto"
+  >
+    <span class="pr-1 font-bold text-4xl">{{ displayedText }}</span>
+
+    <div *ngIf="isTypingComplete" class="pt-8 cta-action">
+      <p class="mb-0 text-2xl font-bold">
+        This is where
+        <span class="underline italic">Cubit Global Solution</span> Comes In...
+      </p>
+
+      <button
+        type="button"
+        class="cursor-pointer btn mat-ripple bg-white text-black z-[1] p-4 m-6 outline-none font-bold rounded-xl text-xl"
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
+
+  <p></p>
+</section> -->
+
+<section
+  id="hero-section"
+  class="h-screen bg-black text-white flex flex-col items-center justify-center text-center p-4 sm:p-8 md:p-12"
+>
+  <div
+    class="typing-container flex items-center justify-center flex-col whitespace-pre-wrap break-words w-full overflow-hidden max-w-[800px] m-auto"
+  >
+    <span class="pr-1 font-bold text-2xl sm:text-3xl md:text-4xl">
+      {{ displayedText }}
+    </span>
+
+    <!-- CTA -->
+    <div *ngIf="isTypingComplete" class="pt-8 cta-action">
+      <p class="mb-4 text-xl text-center sm:text-2xl md:text-3xl font-bold">
+        This is where
+        <span class="underline italic cursor-pointer"
+          >Cubit Global Solution</span
+        >
+        Comes In.
+      </p>
+
+      <button
+        type="button"
+        class="cursor-pointer bg-white text-black z-[1] p-4 mt-6 outline-none font-bold rounded-xl text-base sm:text-xl md:text-2xl transition-all duration-300 ease-in-out transform hover:scale-105"
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
+</section>
