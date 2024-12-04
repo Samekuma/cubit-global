@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderModule } from '../header/header.module';
 import { HeroSectionModule } from '../hero-section/hero-section.module';
+import { ObjectivesModule } from "../objectives/objectives.module";
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
@@ -14,7 +15,8 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     RouterModule.forChild(routes),
     HeaderModule,
     HeroSectionModule,
-  ],
+    ObjectivesModule
+],
   // exports: [HomeComponent],
 })
 export class HomeModule {}

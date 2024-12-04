@@ -29,7 +29,11 @@ const route: Routes = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(route), BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(route),
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   // exports: [RouterModule],

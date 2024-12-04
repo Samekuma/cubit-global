@@ -6,6 +6,8 @@ import { HeaderModule } from './header/header.module';
 // import { HomeModule } from './home/home.module';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   {
     path: '',
     component: WebsiteComponent,
