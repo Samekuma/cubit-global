@@ -1,5 +1,17 @@
-<app-header></app-header>
 <section id="home">
-  <app-hero-section></app-hero-section>
-  <app-objectives></app-objectives>
+  <app-hero-section
+    [backgroundImage]="homeHeroBg"
+    [subtitle]="homeSubtitleText"
+    [title]="homeTitleText"
+    [showButton]="true"
+    [buttonText]="'Get Started'"
+  ></app-hero-section>
+
+  <app-our-services></app-our-services>
+
+  <app-featured-properties></app-featured-properties>
+
+  <app-testimonial></app-testimonial>
 </section>
+
+<!-- <app-header></app-header> -->

@@ -1,37 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero-section',
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss'],
 })
-export class HeroSectionComponent implements OnInit {
-  fullText: string =
-    "Finding the perfect property is about more than space—it's where memories are made and dreams bloom.";
-  // "Finding the perfect property isn’t just about square footage—it's about discovering a place where memories are created, dreams take shape, and life truly unfolds!";
-  // 'Finding a property isn’t just about square footage—it’s about finding a space where life unfolds, memories are made, and dreams are built!';
+export class HeroSectionComponent {
+  @Input() backgroundImage: string = ''; // dynamic background image
+  @Input() title: string = ''; // dynamic title text
+  @Input() subtitle: string = ''; // dynamic subtitle text
+  @Input() showButton: boolean = true; // to control button visibility
+  @Input() buttonText: string = 'Learn More'; // button text
 
-  displayedText: string = '';
-  typingSpeed: number = 100; // Time in milliseconds between typing each character
-  isTypingComplete: boolean = false;
+  // Default background image URL
+  defaultBackground: string = 'assets/images/hero-bg.jpg';
 
-  constructor() {}
-
-  ngOnInit(): void {
-    this.startTypingEffect();
-  }
-
-  startTypingEffect(): void {
-    let index = 0;
-
-    const intervalId = setInterval(() => {
-      if (index < this.fullText.length) {
-        this.displayedText += this.fullText[index];
-        index++;
-      } else {
-        clearInterval(intervalId);
-        this.isTypingComplete = true;
-      }
-    }, this.typingSpeed);
+  getBackgroundImage(): string {
+    return this.backgroundImage || this.defaultBackground;
   }
 }

@@ -1,0 +1,40 @@
+<section
+  class="services-section bg-white mx-5 my-6 lg:mx-10 p-4 lg:my-8 rounded-3xl text-white"
+>
+  <div
+    class="flex items-center justify-center flex-col py-12 gap-5 service-text-content text-center"
+  >
+    <p class="text-black mb-0 text-5xl font-normal">What We Do</p>
+
+    <p class="text-[#000000a6] mb-0 text-xl text-center w-full lg:w-[628px]">
+      Simplifying the process of buying, selling, and renting properties. Our
+      experienced team offers complete real estate solutions customized to fit
+      your needs.
+    </p>
+
+    <div class="border mb-0 border-solid h-1 w-12 bg-[#34a0a4]"></div>
+  </div>
+
+  <div
+    class="flex flex-col justify-between place-items-start items-center mt-4 gap-4 sm:grid sm:grid-cols-1 sm:gap-4 sm:place-items-start md:grid-cols-2 md:place-items-start lg:grid-cols-3 lg:place-items-start lg:gap-4 xl:grid-cols-4 xl:gap-4 xl:place-items-start flex-wrap"
+  >
+    <div
+      class="flex items-start w-full lg:w-[320.5px] flex-col"
+      *ngFor="let item of cardContent; let i = index"
+    >
+      <div class="flex flex-col gap-5 text-left p-2">
+        <p class="text-[#34a0a4] text-xl font-normal mb-0">
+          {{ padWithZero(i + 1) }}
+        </p>
+
+        <p class="text-black mb-0 text-2xl font-medium">
+          {{ item.title }}
+        </p>
+
+        <p class="text-[#000000a6] mb-0 text-xl font-normal">
+          {{ item.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
