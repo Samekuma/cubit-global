@@ -23,11 +23,11 @@ export class HeaderComponent implements OnInit {
   }
 
   navLink: NavData[] = [
-    { name: 'Home', route: '' },
-    { name: 'About', route: '' },
-    { name: 'Services', route: '' },
-    { name: 'Properties', route: '' },
-    { name: 'Contact', route: '' },
+    { name: 'Home', route: 'site/home' },
+    { name: 'About', route: 'site/about' },
+    { name: 'Services', route: 'site/services' },
+    { name: 'Properties', route: 'site/properties' },
+    { name: 'Contact', route: 'site/contact' },
   ];
 
   navigateToRoute(route: string) {
@@ -36,5 +36,7 @@ export class HeaderComponent implements OnInit {
 
     // Navigate to the route
     this.route.navigate([route]);
+
+    console.log(route, 'this is the route');
   }
 }

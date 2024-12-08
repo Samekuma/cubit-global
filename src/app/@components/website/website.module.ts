@@ -9,6 +9,30 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
+  },
+
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
+
+  {
+    path: 'services',
+    loadChildren: () =>
+      import('./services/services.module').then((m) => m.ServicesModule),
+  },
+
+  {
+    path: 'properties',
+    loadChildren: () =>
+      import('./properties/properties.module').then((m) => m.PropertiesModule),
+  },
+
+  {
     path: '',
     component: WebsiteComponent,
     children: [
