@@ -1,60 +1,119 @@
-<!-- <section id="header" class="px-6 py-4">
-  <div class="flex items-center justify-between">
-    <p class="mb-0 text-2xl w-[15rem] text-center text-white">
-      Cubit Global Solution
+<header id="header" class="px-6 py-4 bg-transparent">
+  <div class="header-container flex items-center justify-between">
+    <p
+      class="brand-title font-semibold text-white text-base md:text-xl lg:text-lg"
+    >
+      Cubit <span class="font-bold">Global</span> Solution
     </p>
 
-    <div class="flex items-center justify-center gap-6">
-      <img
-        matRipple
-        class="cursor-pointer"
-        src="assets/icons/header-icons/instagram.svg"
-        alt="Instagram Icon"
-      />
+    <!-- Navigation Menu -->
+    <nav
+      [ngClass]="{ block: isMenuOpen, hidden: !isMenuOpen }"
+      class="absolute top-16 left-0 w-full bg-gray-50 lg:flex lg:space-x-6 lg:relative lg:top-0 lg:w-auto lg:block lg:bg-transparent"
+    >
+      <ul
+        class="flex flex-col gap-4 lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0"
+      >
+        <li
+          *ngFor="let item of navLink"
+          (click)="navigateToRoute(item.route)"
+          [routerLink]="item.route"
+          routerLinkActive="router-link-active"
+          class="list-none p-4 text-black hover:text-[#34a0a4] cursor-pointer"
+        >
+          <a
+            class="font-semibold flex items-center lg:text-white lg:hover:text-[#34a0a4]"
+            >{{ item.name }}</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-      <img
-        class="cursor-pointer"
-        matRipple
-        src="assets/icons/header-icons/linkedin.svg"
-        alt="linkedin Icon"
-      />
+    <!-- Social Media Icons (Mobile) -->
+    <div
+      class="nav-icons flex items-center justify-between gap-4 lg:flex hidden"
+    >
+      <!-- Facebook Icon -->
+      <span class="cursor-pointer fill-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 576 512"
+        >
+          <path
+            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+          ></path>
+        </svg>
+      </span>
 
-      <img
-        class="cursor-pointer"
-        matRipple
-        src="assets/icons/header-icons/twitterx.svg"
-        alt="X Icon"
-      />
+      <!-- Twitter Icon -->
+      <span class="cursor-pointer fill-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+          ></path>
+        </svg>
+      </span>
+
+      <!-- Instagram Icon -->
+      <span class="cursor-pointer fill-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+
+    <!-- Hamburger / Close Button (Mobile) -->
+    <div
+      (click)="toggleMenu()"
+      class="lg:hidden cursor-pointer focus:outline-none flex items-center justify-center w-10 h-10"
+    >
+      <!-- Hamburger Icon (visible when menu is closed) -->
+      <span
+        class="cursor-pointer flex items-center justify-center h-11 w-11 bg-[#34a0a4] fill-white"
+        [ngClass]="isMenuOpen ? 'hidden' : ''"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"
+          ></path>
+        </svg>
+      </span>
+
+      <!-- Close Icon (visible when menu is open) -->
+      <span
+        class="cursor-pointer flex items-center justify-center h-11 w-11 bg-[#34a0a4] fill-white"
+        [ngClass]="!isMenuOpen ? 'hidden' : ''"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"
+          ></path>
+        </svg>
+      </span>
     </div>
   </div>
-</section> -->
-
-<section id="header" class="px-6 py-4 fixed bg-white right-0 left-0">
-  <div class="flex items-center justify-between">
-    <!-- Company Name -->
-    <p class="mb-0 text-sm sm:text-base md:text-xl cursor-pointer text-black hover:scale-110">
-      Cubit Global Solution
-    </p>
-
-    <!-- Social Icons Container -->
-    <div class="flex items-center justify-center gap-6">
-      <img
-        class="cursor-pointer w-6 h-6 sm:w-8 sm:h-8 hover:scale-105"
-        src="assets/icons/header-icons/instagram.svg"
-        alt="Instagram Icon"
-      />
-
-      <img
-        class="cursor-pointer w-6 h-6 sm:w-8 sm:h-8 hover:scale-105"
-        src="assets/icons/header-icons/linkedin.svg"
-        alt="LinkedIn Icon"
-      />
-
-      <img
-        class="cursor-pointer w-6 h-6 sm:w-8 sm:h-8 hover:scale-105"
-        src="assets/icons/header-icons/twitterx.svg"
-        alt="Twitter Icon"
-      />
-    </div>
-  </div>
-</section>
+</header>

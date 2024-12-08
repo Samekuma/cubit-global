@@ -1,60 +1,33 @@
-<!-- <section
-  id="hero-section"
-  class="h-screen bg-black text-white flex flex-col items-center justify-center text-center"
+<section
+  class="hero-section relative bg-cover bg-center mx-5 my-6 min-h-[50vh] lg:mx-10 lg:my-8 rounded-3xl text-white py-40 lg:py-48 md:min-h-[60vh] lg:min-h-[80vh]"
+  [style.backgroundImage]="'url(' + getBackgroundImage() + ')'"
 >
-  <div
-    class="typing-container flex items-center justify-center flex-col whitespace-pre-wrap break-words w-full overflow-hidden max-w-screen-md m-auto"
-  >
-    <span class="pr-1 font-bold text-4xl">{{ displayedText }}</span>
-
-    <div *ngIf="isTypingComplete" class="pt-8 cta-action">
-      <p class="mb-0 text-2xl font-bold">
-        This is where
-        <span class="underline italic">Cubit Global Solution</span> Comes In...
-      </p>
-
-      <button
-        type="button"
-        class="cursor-pointer btn mat-ripple bg-white text-black z-[1] p-4 m-6 outline-none font-bold rounded-xl text-xl"
-      >
-        Get Started
-      </button>
-    </div>
+  <div class="relative z-20 top-[-156px] lg:top-[-180px]">
+    <app-header></app-header>
   </div>
 
-  <p></p>
-</section> -->
+  <!-- Dark overlay to improve text visibility -->
+  <div class="absolute inset-0 bg-black rounded-3xl opacity-50"></div>
 
-<section
-  id="hero-section"
-  class="h-screen bg-black text-white flex flex-col items-center justify-center text-center p-4 sm:p-8 md:p-12"
->
+  <!-- Content inside the hero section -->
   <div
-    class="typing-container flex items-center justify-center flex-col whitespace-pre-wrap break-words w-full overflow-hidden max-w-[800px] m-auto"
+    class="flex flex-col items-center justify-center gap-6 container mx-auto text-center relative z-10 px-6"
   >
-    <span class="pr-1 font-bold text-2xl sm:text-3xl md:text-4xl">
-      {{ displayedText }}
-    </span>
+    <p class="text-lg sm:text-xl lg:text-2xl">{{ subtitle }}</p>
 
-    <!-- CTA -->
-    <div *ngIf="isTypingComplete" class="pt-8 cta-action">
-      <p class="mb-4 text-xl text-center sm:text-2xl md:text-3xl font-bold">
-        This is where
-        <span class="underline italic cursor-pointer"
-          >Cubit Global Solution</span
-        >
-        Comes In.
-      </p>
+    <h1
+      class="text-3xl h-[162px] w-full sm:text-5xl lg:text-7xl lg:h-[162px] lg:w-[942px] font-bold"
+    >
+      {{ title }}
+    </h1>
 
+    <!-- Conditional Button -->
+    <div *ngIf="showButton">
       <button
         type="button"
-        class="cursor-pointer bg-white text-black z-[1] p-3 mt-6 outline-none rounded-xl text-base sm:text-xl md:text-2xl transition-all duration-300 ease-in-out transform hover:scale-105"
+        class="bg-[#34a0a4] px-6 sm:px-8 py-3 text-sm sm:text-lg font-semibold rounded-full hover:bg-[#0b787c] transition duration-300"
       >
-        <a
-          href="mailto:cubitglobalsolutions@gmail.com?subject=Enquiry"
-          title="Send an email to cubitglobalsolutions@gmail.com with pre-filled subject and body"
-          >Get Started</a
-        >
+        {{ buttonText }}
       </button>
     </div>
   </div>
