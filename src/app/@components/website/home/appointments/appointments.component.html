@@ -1,0 +1,15 @@
+<section
+  class="appointment-section relative bg-cover bg-center mx-5 my-6 min-h-[50vh] lg:mx-10 lg:my-8 rounded-3xl text-white py-40 lg:py-48 md:min-h-[60vh] lg:min-h-[80vh]"
+  [style.backgroundImage]="'url(' + backgroundImageUrl + ')'"
+>
+  <!-- Dark overlay to improve text visibility -->
+  <div class="absolute inset-0 bg-black rounded-3xl opacity-50"></div>
+
+  <!-- Content inside the hero section -->
+  <div
+    class="flex flex-col items-center justify-center gap-6 container mx-auto text-center relative z-10 px-6"
+  >
+    <app-contact-us-card></app-contact-us-card>
+    <p class="text-black">hello world</p>
+  </div>
+</section>

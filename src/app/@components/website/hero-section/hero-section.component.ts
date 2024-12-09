@@ -6,11 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hero-section.component.scss'],
 })
 export class HeroSectionComponent {
-  @Input() backgroundImage: string = ''; // dynamic background image
-  @Input() title: string = ''; // dynamic title text
-  @Input() subtitle: string = ''; // dynamic subtitle text
-  @Input() showButton: boolean = true; // to control button visibility
-  @Input() buttonText: string = 'Learn More'; // button text
+  @Input() backgroundImage: string = '';
+  @Input() title: string = '';
+  @Input() subtitle: string = '';
+  @Input() showButton: boolean = true;
+  @Input() buttonText: string = 'Learn More';
 
   // Default background image URL
   defaultBackground: string = 'assets/images/hero-bg.jpg';
