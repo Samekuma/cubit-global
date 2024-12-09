@@ -44,3 +44,8 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.router-link-active {
+  color: #34a0a4 !important;
+  font-weight: bold;
+}

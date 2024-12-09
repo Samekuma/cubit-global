@@ -13,6 +13,7 @@ export interface NavData {
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen: boolean = false;
+
   constructor(private route: Router) {}
 
   ngOnInit(): void {}
@@ -23,11 +24,11 @@ export class HeaderComponent implements OnInit {
   }
 
   navLink: NavData[] = [
-    { name: 'Home', route: 'site/home' },
-    { name: 'About', route: 'site/about' },
-    { name: 'Services', route: 'site/services' },
-    { name: 'Properties', route: 'site/properties' },
-    { name: 'Contact', route: 'site/contact' },
+    { name: 'Home', route: '/site/home' },
+    { name: 'About', route: '/site/about' },
+    { name: 'Services', route: '/site/services' },
+    { name: 'Properties', route: '/site/properties' },
+    { name: 'Contact', route: '/site/contact' },
   ];
 
   navigateToRoute(route: string) {
@@ -36,7 +37,5 @@ export class HeaderComponent implements OnInit {
 
     // Navigate to the route
     this.route.navigate([route]);
-
-    console.log(route, 'this is the route');
   }
 }
