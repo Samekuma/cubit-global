@@ -12,18 +12,18 @@
       class="absolute top-16 left-0 w-full bg-gray-50 lg:flex lg:space-x-6 lg:relative lg:top-0 lg:w-auto lg:block lg:bg-transparent"
     >
       <ul
-        class="flex flex-col gap-4 lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0"
+        class="flex flex-col gap-2 lg:gap-4 lg:flex-row lg:space-x-6 space-y-2 lg:space-y-0"
       >
         <li
           *ngFor="let item of navLink"
           (click)="navigateToRoute(item.route)"
-          class="list-none p-4 text-black hover:text-[#34a0a4] cursor-pointer"
+          class="list-none text-black hover:text-[#34a0a4] cursor-pointer"
         >
           <a
             [routerLinkActiveOptions]="{ exact: true }"
             [routerLink]="item.route"
             routerLinkActive="router-link-active"
-            class="font-semibold flex items-center lg:text-white lg:hover:text-[#34a0a4]"
+            class="font-semibold flex items-center pl-4 py-2 lg:py-0 border-b solid border-b-[#eaeaea] lg:border-none lg:text-white lg:hover:text-[#34a0a4]"
             >{{ item.name }}</a
           >
         </li>

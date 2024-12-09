@@ -1,2 +1,77 @@
-<p>contact-us-card works!</p>
-<p>G hello world</p>
+<section class="bg-white rounded-2xl w-full lg:w-[45rem]">
+  <div class="flex flex-col gap-5 p-12">
+    <div class="text-black flex flex-col items-center justify-center gap-6">
+      <p class="font-medium text-[0.78947368421053rem]">CONTACT US</p>
+      <p class="mb-0 text-2xl text-black lg:text-4xl">Book an Appointment</p>
+      <div
+        class="border mb-0 border-solid h-1 w-12 bg-[#34a0a4] outline-none"
+      ></div>
+    </div>
+
+    <form
+      class="flex flex-col gap-2"
+      [formGroup]="contactUsForm"
+      (ngSubmit)="sendEmail()"
+      *ngIf="!isSubmitted"
+    >
+      <div class="flex flex-col">
+        <label class="text-[#000000a6] text-lg font-normal mb-0">Name</label>
+
+        <input
+          type="text"
+          formControlName="name"
+          class="outline-none font-normal break-words text-black bg-white pl-1 border-b border-solid border-black"
+        />
+        <mat-error
+          *ngIf="formControls['name'].invalid && formControls['name'].touched"
+          class="error"
+          >Name is required</mat-error
+        >
+      </div>
+
+      <div class="flex flex-col">
+        <label class="text-[#000000a6] text-lg font-normal mb-0">Email</label>
+
+        <input
+          type="email"
+          formControlName="email"
+          class="outline-none font-normal text-black break-words bg-white pl-1 border-b border-solid border-black"
+        />
+        <mat-error
+          *ngIf="formControls['email'].invalid && formControls['email'].touched"
+          class="error"
+          >Email is required</mat-error
+        >
+      </div>
+
+      <div class="flex flex-col">
+        <label class="text-[#000000a6] text-lg font-normal mb-0">Message</label>
+
+        <textarea
+          formControlName="message"
+          class="outline-none break-words font-normal text-black bg-white pl-1 border-b border-solid border-black"
+        ></textarea>
+        <mat-error
+          *ngIf="formControls['email'].invalid && formControls['email'].touched"
+          class="error"
+          >A message is required</mat-error
+        >
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="contactUsForm.invalid"
+        class="bg-[#34a0a4] mt-6 px-6 sm:px-8 py-3 text-sm sm:text-lg font-semibold rounded-full hover:bg-[#0b787c] transition duration-300"
+      >
+        {{ isLoading ? "Submitting..." : " REQUEST A CALL BACK" }}
+      </button>
+    </form>
+
+    <div
+      *ngIf="isSubmitted"
+      class="success-message font-medium text-[0.78947368421053rem] text-[#000000a6]"
+    >
+      <p>Thanks for contacting us! We will be in touch with you shortly.</p>
+    </div>
+  </div>
+</section>
