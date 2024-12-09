@@ -49,3 +49,18 @@ body {
   color: #34a0a4 !important;
   font-weight: bold;
 }
+.mat-error {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: start !important;
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
+  font-size: 0.75rem !important;
+
+  img {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
