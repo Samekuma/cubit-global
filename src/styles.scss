@@ -64,3 +64,8 @@ body {
     height: 0.875rem;
   }
 }
+
+::selection {
+  color: black;
+  background-color: rgb(11 120 124 / var(--tw-text-opacity, 1));
+}
