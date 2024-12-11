@@ -50,7 +50,7 @@ export class ContactUsCardComponent implements OnInit {
     emailjs
       .send(this.serviceId, this.templateId, formData, this.userId)
       .then(() => {
-        this.isLoading = false;
+        this.isLoading = true;
         this.isSubmitted = true;
         this.contactUsForm.reset();
       })

@@ -10,6 +10,7 @@ import { FeaturedPropertiesComponent } from './featured-properties/featured-prop
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { ContactUsCardModule } from "../contact-us-card/contact-us-card.module";
+import { FooterModule } from "../footer/footer.module";
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
@@ -27,7 +28,8 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     HeaderModule,
     HeroSectionModule,
     ObjectivesModule,
-    ContactUsCardModule
+    ContactUsCardModule,
+    FooterModule
 ],
   // exports: [HomeComponent],
 })

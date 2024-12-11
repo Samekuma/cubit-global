@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   homeHeroBg: string = 'assets/images/hero-bg.jpg';
   homeTitleText: string = 'Uncover the Perfect Property for Your Way of Life';
-  homeSubtitleText: string = 'Discover Your Dream Home with Us';
+  homeSubtitleText: string = 'Discover Your Dream Assets with Us';
 
   constructor() {}
 
