@@ -8,9 +8,8 @@ import { ObjectivesModule } from '../objectives/objectives.module';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
-import { AppointmentsComponent } from './appointments/appointments.component';
-import { ContactUsCardModule } from "../contact-us-card/contact-us-card.module";
-import { FooterModule } from "../footer/footer.module";
+import { FooterModule } from '../footer/footer.module';
+import { AppointmentsModule } from './appointments/appointments.module';
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
@@ -20,7 +19,6 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     OurServicesComponent,
     FeaturedPropertiesComponent,
     TestimonialComponent,
-    AppointmentsComponent,
   ],
   imports: [
     CommonModule,
@@ -28,9 +26,9 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     HeaderModule,
     HeroSectionModule,
     ObjectivesModule,
-    ContactUsCardModule,
-    FooterModule
-],
+    FooterModule,
+    AppointmentsModule,
+  ],
   // exports: [HomeComponent],
 })
 export class HomeModule {}
