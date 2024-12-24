@@ -1,0 +1,38 @@
+<section>
+  <div
+    class="about-desc-section bg-white mx-5 my-6 lg:mx-10 lg:my-8 rounded-3xl text-white"
+  >
+    <div
+      class="flex items-center justify-center flex-col lg:flex-row w-full py-10 px-8 gap-6 lg:py-20 lg:px-12"
+      [ngClass]="{ 'lg:flex-row-reverse': imagePosition === 'right' }"
+    >
+      <div class="w-full lg:w-[59.5%] h-auto">
+        <img
+          class="rounded-lg w-full"
+          [src]="imageSrc"
+          [alt]="imageAlt || 'About Section Image'"
+        />
+      </div>
+
+      <div class="flex flex-col w-full px-0 lg:px-12 lg:w-[40.5%]">
+        <div>
+          <p class="mb-4 lg:mb-9 text-base text-[#34a0a4] font-normal">
+            {{ step }}
+          </p>
+
+          <p class="text-black mb-4 lg:mb-9 text-3xl lg:text-5xl font-normal">
+            {{ title }}
+          </p>
+
+          <div
+            class="border mb-4 lg:mb-9 border-solid h-1 w-12 bg-[#34a0a4]"
+          ></div>
+        </div>
+
+        <p class="text-[#000000a6] mb-0 text-left text-xl w-full">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

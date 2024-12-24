@@ -6,20 +6,15 @@ import { HeaderModule } from '../header/header.module';
 import { HeroSectionModule } from '../hero-section/hero-section.module';
 import { ObjectivesModule } from '../objectives/objectives.module';
 import { OurServicesComponent } from './our-services/our-services.component';
-import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { FooterModule } from '../footer/footer.module';
 import { AppointmentsModule } from './appointments/appointments.module';
+import { FeaturedPropertiesModule } from './featured-properties/featured-properties.module';
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    OurServicesComponent,
-    FeaturedPropertiesComponent,
-    TestimonialComponent,
-  ],
+  declarations: [HomeComponent, OurServicesComponent, TestimonialComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -28,6 +23,7 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     ObjectivesModule,
     FooterModule,
     AppointmentsModule,
+    FeaturedPropertiesModule,
   ],
   // exports: [HomeComponent],
 })
