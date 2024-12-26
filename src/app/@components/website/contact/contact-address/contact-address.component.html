@@ -1,0 +1,91 @@
+<!-- <section
+  class="contact-address-section mx-5 my-6 min-h-[50vh] lg:mx-10 lg:my-8 rounded-3xl text-white"
+>
+  <div
+    class="flex flex-col items-center lg:flex-row w-full flex-wrap justify-between"
+  >
+    <div class="flex flex-col gap-4 w-1/2">
+      <p class="text-black text-3xl lg:text-6xl font-medium mb-0 w-full lg:w-">
+        We look forward to connecting with you.
+      </p>
+
+      <div
+        class="border mt-5 lg:mt-9 mb-5 lg:mb-9 border-solid h-1 w-12 bg-[#34a0a4]"
+      ></div>
+
+      <div class="flex flex-col gap-2">
+        <p class="mb-0 text-[#34a0a4] text-base">PHONE</p>
+        <p class="font-semibold mb-0 text-black text-lg">
+          P: <a href="tel:+2348029490496">+234 802 949 0496</a>
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <p class="mb-0 text-[#34a0a4] text-base">{{ "Email" | uppercase }}</p>
+        <p class="font-semibold mb-0 text-black text-lg">
+          cubitglobalsolutions&commat;gmail.com
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <p class="mb-0 text-[#34a0a4] text-base">{{ "Address" | uppercase }}</p>
+        <p class="font-semibold mb-0 text-black text-lg">
+          Lekki, Lagos Nigeria.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-1/2">
+      <app-contact-us-card></app-contact-us-card>
+    </div>
+  </div>
+</section> -->
+
+<section
+  class="contact-address-section mx-5 my-6 lg:my-12 min-h-[50vh] lg:mx-10 rounded-3xl text-white"
+>
+  <div
+    class="flex flex-col items-center md:flex-row w-full flex-wrap lg:justify-between gap-6"
+  >
+    <div class="flex flex-col gap-4 w-full lg:w-[30%]">
+      <p
+        class="text-black text-3xl lg:text-6xl font-medium mb-0 w-full lg:w-[45rem]"
+      >
+        We look forward to connecting with you.
+      </p>
+
+      <div
+        class="border mt-5 lg:mt-9 mb-5 lg:mb-9 border-solid h-1 w-12 bg-[#34a0a4]"
+      ></div>
+
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <p class="mb-0 text-[#34a0a4] text-base">{{ "Phone" | uppercase }}</p>
+          <p class="font-semibold mb-0 text-black text-lg">
+            P: <a href="tel:+2348029490496">+234 802 949 0496</a>
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <p class="mb-0 text-[#34a0a4] text-base">{{ "Email" | uppercase }}</p>
+          <p class="font-semibold mb-0 text-black text-lg">
+            cubitglobalsolutions&commat;gmail.com
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <p class="mb-0 text-[#34a0a4] text-base">
+            {{ "Address" | uppercase }}
+          </p>
+          <p class="font-semibold mb-0 text-black text-lg">
+            Lekki, Lagos Nigeria.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-[50%]">
+      <app-contact-us-card [customWidth]="'w-full'"></app-contact-us-card>
+    </div>
+  </div>
+</section>
