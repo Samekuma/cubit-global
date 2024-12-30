@@ -1,7 +1,5 @@
-<section
-  class="bg-white rounded-2xl w-full"
-  [ngClass]="customWidth ? customWidth : 'lg:w-[45rem]'"
->
+<section class="contact-us-container bg-white rounded-2xl w-full" [ngClass]="dynamicClasses">
+  <!-- [ngClass]="customWidth ? customWidth : 'lg:w-[45rem]'" -->
   <!-- [style.width]="customWidth || '100%'" -->
   <div class="flex flex-col gap-5 p-12">
     <div class="text-black flex flex-col items-center justify-center gap-6">

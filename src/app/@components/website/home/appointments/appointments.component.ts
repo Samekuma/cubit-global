@@ -9,4 +9,8 @@ export class AppointmentsComponent {
   backgroundImageUrl: string = 'assets/images/featured/cta.jpg';
 
   constructor() {}
+
+  showMessage(msg: string): string {
+    return msg;
+  }
 }
