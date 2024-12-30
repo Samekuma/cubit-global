@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
@@ -9,14 +9,16 @@ import emailjs from '@emailjs/browser';
 })
 export class ContactUsCardComponent implements OnInit {
   contactUsForm: FormGroup;
+  formStatus: string = '';
   notificationMessage: string = '';
+  dynamicClasses: { [key: string]: boolean } = {};
 
   isSubmitted: boolean = false;
   isLoading: boolean = false;
   isError = false;
   isSuccess = false;
 
-  @Input() customWidth?: string;
+  @Input() customWidth: string | null = null;
 
   // Replace with your EmailJS user ID and service/template IDs
   userId = 'j6md0LTlseWNrsMCc'; // Get this from EmailJS account settings
@@ -27,6 +29,8 @@ export class ContactUsCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeContactUsForm();
+
+    this.updateClasses();
   }
 
   initializeContactUsForm() {
@@ -35,10 +39,26 @@ export class ContactUsCardComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required],
     });
+
+    this.contactUsForm.statusChanges.subscribe((value) => {
+      this.formStatus = value;
+      this.updateClasses();
+    });
+
+    this.updateClasses(); // Set initial classes
   }
 
   get formControls() {
     return this.contactUsForm.controls;
+  }
+
+  updateClasses() {
+    this.dynamicClasses = {
+      [this.customWidth || 'lg:w-[45rem]']: true,
+      [this.formStatus?.toLowerCase() || '']: !!this.formStatus, // Handle undefined formStatus
+    };
+
+    return this.dynamicClasses;
   }
 
   sendEmail(): void {

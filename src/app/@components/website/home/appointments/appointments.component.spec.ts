@@ -3,14 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppointmentsComponent } from './appointments.component';
 
 describe('AppointmentsComponent', () => {
-  let component: AppointmentsComponent;
   let fixture: ComponentFixture<AppointmentsComponent>;
+  let component: AppointmentsComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppointmentsComponent ]
-    })
-    .compileComponents();
+      declarations: [AppointmentsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,9 @@ describe('AppointmentsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Show Message', () => {
+    expect(component.showMessage('Hello world')).toBe('Hello world');
   });
 });
